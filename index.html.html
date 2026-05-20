@@ -1,0 +1,217 @@
+
+<h2 class="sr-only">Dashboard สรุปการอบรมและผลประเมิน Claude Cowork For Business</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+.dash{padding:1rem 0;}
+.header{margin-bottom:1.25rem;}
+.header h1{font-size:18px;font-weight:500;color:var(--color-text-primary);}
+.header p{font-size:13px;color:var(--color-text-secondary);margin-top:4px;}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-tertiary);margin:1.5rem 0 .6rem;}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1rem;}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 16px;}
+.metric .mlabel{font-size:12px;color:var(--color-text-secondary);margin-bottom:6px;}
+.metric .mval{font-size:26px;font-weight:500;line-height:1;}
+.metric .msub{font-size:11px;color:var(--color-text-secondary);margin-top:4px;}
+.blue .mval{color:#185FA5;} .green .mval{color:#0F6E56;} .amber .mval{color:#BA7517;} .red .mval{color:#A32D2D;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.row3{display:grid;grid-template-columns:1.3fr 0.7fr;gap:12px;margin-bottom:12px;}
+.card{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;}
+.ctitle{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em;}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.bar-lbl{font-size:12px;color:var(--color-text-secondary);width:132px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.bar-track{flex:1;background:var(--color-background-secondary);border-radius:3px;height:9px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:3px;}
+.bar-num{font-size:12px;font-weight:500;color:var(--color-text-primary);width:26px;text-align:right;flex-shrink:0;}
+.prog-wrap{margin-bottom:10px;}
+.prog-head{display:flex;justify-content:space-between;margin-bottom:4px;}
+.prog-head span{font-size:12px;color:var(--color-text-secondary);}
+.prog-head strong{font-size:12px;font-weight:500;color:var(--color-text-primary);}
+.prog-bar{height:16px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden;}
+.prog-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:10px;font-weight:500;color:#fff;}
+.leg{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.leg-item{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--color-text-secondary);}
+.leg-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
+.score-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:.5px solid var(--color-border-tertiary);}
+.score-row:last-child{border-bottom:none;}
+.score-name{font-size:13px;color:var(--color-text-primary);}
+.score-dept{font-size:11px;color:var(--color-text-secondary);}
+.score-badge{font-size:12px;font-weight:500;padding:3px 10px;border-radius:var(--border-radius-md);}
+.s-full{background:#EAF3DE;color:#3B6D11;}
+.s-high{background:#E6F1FB;color:#185FA5;}
+.s-mid{background:#FAEEDA;color:#854F0B;}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.stat-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;text-align:center;}
+.stat-box .sv{font-size:22px;font-weight:500;color:var(--color-text-primary);}
+.stat-box .sl{font-size:11px;color:var(--color-text-secondary);margin-top:2px;}
+.batch-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.batch-item{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:8px 10px;}
+.batch-item .bdate{font-size:10px;color:var(--color-text-secondary);}
+.batch-item .bcount{font-size:19px;font-weight:500;color:var(--color-text-primary);}
+</style>
+
+<div class="dash">
+  <div class="header">
+    <h1>Dashboard การอบรม — Claude Cowork For Business</h1>
+    <p>ข้อมูล ณ วันที่ 20 พฤษภาคม 2569 · รุ่นที่ 1–8</p>
+  </div>
+
+  <div class="section-label">ภาพรวมการอบรม</div>
+  <div class="metrics">
+    <div class="metric blue"><div class="mlabel">กลุ่มเป้าหมาย</div><div class="mval">82</div><div class="msub">คน</div></div>
+    <div class="metric blue"><div class="mlabel">ลงทะเบียน</div><div class="mval">75</div><div class="msub">91.5% ของเป้าหมาย</div></div>
+    <div class="metric green"><div class="mlabel">เข้าอบรมจริง</div><div class="mval">74</div><div class="msub">98.7% ของผู้ลงทะเบียน</div></div>
+    <div class="metric red"><div class="mlabel">ไม่ได้เข้าอบรม</div><div class="mval">1</div><div class="msub">คน</div></div>
+  </div>
+
+  <div class="row2">
+    <div class="card">
+      <div class="ctitle">ผู้เข้าอบรมแยกตามฝ่าย</div>
+      <div class="leg">
+        <span class="leg-item"><span class="leg-dot" style="background:#185FA5;"></span>เข้าอบรมแล้ว</span>
+        <span class="leg-item"><span class="leg-dot" style="background:#D3D1C7;"></span>ยังไม่ได้อบรม</span>
+      </div>
+      <div id="dept-bars"></div>
+    </div>
+    <div class="card">
+      <div class="ctitle">สัดส่วนระดับตำแหน่ง (กลุ่มเป้าหมาย)</div>
+      <div style="position:relative;height:190px;"><canvas id="posChart" role="img" aria-label="Manager 11 คน Supervisor 23 คน Officer/Exec/Other 48 คน">Manager 11, Supervisor 23, Officer/Other 48</canvas></div>
+      <div class="leg" style="margin-top:8px;margin-bottom:0;">
+        <span class="leg-item"><span class="leg-dot" style="background:#185FA5;"></span>Manager · 11</span>
+        <span class="leg-item"><span class="leg-dot" style="background:#1D9E75;"></span>Supervisor · 23</span>
+        <span class="leg-item"><span class="leg-dot" style="background:#BA7517;"></span>Officer/Other · 48</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row3">
+    <div class="card">
+      <div class="ctitle">ความคืบหน้าและรุ่นที่อบรม</div>
+      <div class="prog-wrap"><div class="prog-head"><span>เป้าหมาย → ลงทะเบียน</span><strong>75/82</strong></div><div class="prog-bar"><div class="prog-fill" style="width:91.5%;background:#185FA5;">91.5%</div></div></div>
+      <div class="prog-wrap"><div class="prog-head"><span>ลงทะเบียน → เข้าอบรม</span><strong>74/75</strong></div><div class="prog-bar"><div class="prog-fill" style="width:98.7%;background:#0F6E56;">98.7%</div></div></div>
+      <div class="prog-wrap" style="margin-bottom:14px;"><div class="prog-head"><span>เป้าหมาย → เข้าอบรมจริง</span><strong>74/82</strong></div><div class="prog-bar"><div class="prog-fill" style="width:90.2%;background:#3B6D11;">90.2%</div></div></div>
+      <div class="batch-grid">
+        <div class="batch-item"><div class="bdate">รุ่นที่ 1 · 14 พ.ค. เช้า</div><div class="bcount">7 <span style="font-size:12px;font-weight:400;color:var(--color-text-secondary)">คน</span></div></div>
+        <div class="batch-item"><div class="bdate">รุ่นที่ 3 · 15 พ.ค. เช้า</div><div class="bcount">12 <span style="font-size:12px;font-weight:400;color:var(--color-text-secondary)">คน</span></div></div>
+        <div class="batch-item"><div class="bdate">รุ่นที่ 5 · 19 พ.ค. บ่าย</div><div class="bcount">11 <span style="font-size:12px;font-weight:400;color:var(--color-text-secondary)">คน</span></div></div>
+        <div class="batch-item"><div class="bdate">รุ่นที่ 6 · 20 พ.ค. เช้า</div><div class="bcount">8 <span style="font-size:12px;font-weight:400;color:var(--color-text-secondary)">คน</span></div></div>
+        <div class="batch-item"><div class="bdate">รุ่นที่ 7 · 20 พ.ค. บ่าย</div><div class="bcount">11 <span style="font-size:12px;font-weight:400;color:var(--color-text-secondary)">คน</span></div></div>
+        <div class="batch-item"><div class="bdate">รุ่นที่ 8 · 21 พ.ค. บ่าย</div><div class="bcount">15 <span style="font-size:12px;font-weight:400;color:var(--color-text-secondary)">คน</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ctitle">รูปแบบการอบรม</div>
+      <div style="position:relative;height:160px;"><canvas id="typeChart" role="img" aria-label="บริษัทจัด 63 คน เข้าเอง 10 คน">บริษัทจัด 63 คน เข้าเอง 10 คน</canvas></div>
+      <div class="leg" style="margin-top:8px;margin-bottom:0;">
+        <span class="leg-item"><span class="leg-dot" style="background:#185FA5;"></span>บริษัทจัดอบรมให้ · 63</span>
+        <span class="leg-item"><span class="leg-dot" style="background:#1D9E75;"></span>เข้าร่วมด้วยตนเอง · 11</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">ผลการทดสอบหลังอบรม (ข้อสอบ 19 ข้อ)</div>
+  <div class="metrics" style="grid-template-columns:repeat(4,1fr);">
+    <div class="metric green"><div class="mlabel">ผู้ทำข้อสอบ</div><div class="mval">10</div><div class="msub">คน (ข้อมูลล่าสุด)</div></div>
+    <div class="metric green"><div class="mlabel">คะแนนเฉลี่ย</div><div class="mval">18.3</div><div class="msub">/ 19 คะแนน (96.5%)</div></div>
+    <div class="metric green"><div class="mlabel">ได้เต็ม 19/19</div><div class="mval">6</div><div class="msub">คน (60%)</div></div>
+    <div class="metric amber"><div class="mlabel">คะแนนต่ำสุด</div><div class="mval">15</div><div class="msub">/ 19 (79%)</div></div>
+  </div>
+
+  <div class="row2">
+    <div class="card">
+      <div class="ctitle">คะแนนรายบุคคล</div>
+      <div id="score-list"></div>
+    </div>
+    <div class="card">
+      <div class="ctitle">การกระจายคะแนน</div>
+      <div style="position:relative;height:200px;"><canvas id="scoreChart" role="img" aria-label="การกระจายคะแนนสอบ 15–19 คะแนน">การกระจายคะแนนสอบ</canvas></div>
+      <div style="margin-top:14px;">
+        <div class="ctitle">ผลการเรียนรู้ข้อที่ตอบผิดบ่อย</div>
+        <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.7;">
+          ข้อ 10 · Claude เหมาะกับหน่วยงานใด → บางส่วนตอบ "เฉพาะผู้บริหาร"<br>
+          ข้อ 16 · การตอบเป็นทางการ → บางส่วนตอบ "ใช้ข้อความสั้นที่สุด"<br>
+          ข้อ 4 · วิธีใช้งาน AI อย่างปลอดภัย → บางส่วนตอบ "ใส่ข้อมูลลับทั้งหมด"<br>
+          ข้อ 19 · Human+AI Collaboration → 1 คน ตอบ "Computer Replacement"
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:8px;">
+    <div class="ctitle">สรุป Case Study — ความเข้าใจการประยุกต์ใช้</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:4px;">
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:6px;">Case 1 · บริการลูกค้า</div>
+        <div style="font-size:12px;color:var(--color-text-primary);">สรุปคำถาม FAQ ร่างคำตอบมาตรฐาน ลดเวลารอลูกค้า</div>
+      </div>
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:6px;">Case 2 · การประชุม</div>
+        <div style="font-size:12px;color:var(--color-text-primary);">บันทึกและสรุปรายงาน ดึง Action Plan ลดเวลาสรุป</div>
+      </div>
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:6px;">Case 3 · การตลาด</div>
+        <div style="font-size:12px;color:var(--color-text-primary);">สร้าง Content โพสต์สินค้า ตรวจสอบความถูกต้องก่อนเผยแพร่</div>
+      </div>
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:6px;">Case 4 · HR</div>
+        <div style="font-size:12px;color:var(--color-text-primary);">ร่างเอกสารปฐมนิเทศ จัดทำคู่มือ ลดภาระงาน HR</div>
+      </div>
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:6px;">Case 5 · วิเคราะห์ข้อมูล</div>
+        <div style="font-size:12px;color:var(--color-text-primary);">สรุปยอดขาย วิเคราะห์เปรียบเทียบ ตรวจสอบตัวเลขก่อนนำเสนอ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const depts = [
+  {name:"Sales & Marketing",target:18,attended:18},
+  {name:"Financial & Accounting",target:14,attended:13},
+  {name:"Supply Chain Mgmt",target:13,attended:13},
+  {name:"Production",target:10,attended:9},
+  {name:"Engineering",target:9,attended:9},
+  {name:"Quality Management",target:5,attended:4},
+  {name:"Human Resources",target:5,attended:4},
+  {name:"IT",target:3,attended:3},
+  {name:"Quality System",target:3,attended:3},
+  {name:"Maintenance",target:2,attended:2},
+  {name:"Management",target:1,attended:1},
+];
+const maxT = Math.max(...depts.map(d=>d.target));
+const db = document.getElementById('dept-bars');
+depts.forEach(d=>{
+  const pct = Math.round(d.attended/maxT*100);
+  const rPct = Math.round((d.target-d.attended)/maxT*100);
+  const row = document.createElement('div'); row.className='bar-row';
+  row.innerHTML=`<span class="bar-lbl" title="${d.name}">${d.name}</span><div class="bar-track"><div style="display:flex;height:100%;"><div class="bar-fill" style="width:${pct}%;background:#185FA5;"></div><div class="bar-fill" style="width:${rPct}%;background:#D3D1C7;"></div></div></div><span class="bar-num">${d.attended}</span>`;
+  db.appendChild(row);
+});
+
+new Chart(document.getElementById('posChart'),{type:'doughnut',data:{labels:['Manager/Ass\'t Mgr','Supervisor','Officer/Exec/Other'],datasets:[{data:[11,23,48],backgroundColor:['#185FA5','#1D9E75','#BA7517'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:false},tooltip:{callbacks:{label:(c)=>` ${c.label}: ${c.raw} คน`}}}}});
+
+new Chart(document.getElementById('typeChart'),{type:'doughnut',data:{labels:['บริษัทจัดอบรมให้','เข้าร่วมด้วยตนเอง'],datasets:[{data:[63,11],backgroundColor:['#185FA5','#1D9E75'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:false},tooltip:{callbacks:{label:(c)=>` ${c.label}: ${c.raw} คน (${Math.round(c.raw/74*100)}%)`}}}}});
+
+const scores=[
+  {name:'นายทิวากร ศรีเชียงฮุ่ง',dept:'Safety',score:19},
+  {name:'อรจิรา นิรัชมงคล',dept:'International Sales',score:18},
+  {name:'วันทนา สงวนศรี',dept:'Quality System',score:19},
+  {name:'ตรีรัตน์ เรือลม',dept:'Engineering',score:18},
+  {name:'พัชราภรณ์ บุญโสม',dept:'Sales & Marketing',score:18},
+  {name:'วรัณญา เหลืองวัฒนวิไล',dept:'Financial & Accounting',score:19},
+  {name:'เก็จมณี มั่นปาน',dept:'Sales & Marketing',score:19},
+  {name:'สุรศักดิ์ นารีจันทร์',dept:'Sales',score:19},
+  {name:'หทัยชนก ซาไซย์',dept:'Supply Chain',score:19},
+  {name:'อนงค์ หาทรัพย์ครอง',dept:'Financial & Accounting',score:15},
+];
+const sl = document.getElementById('score-list');
+scores.forEach(s=>{
+  const cls = s.score===19?'s-full':s.score>=18?'s-high':'s-mid';
+  const el = document.createElement('div'); el.className='score-row';
+  el.innerHTML=`<div><div class="score-name">${s.name}</div><div class="score-dept">${s.dept}</div></div><span class="score-badge ${cls}">${s.score}/19</span>`;
+  sl.appendChild(el);
+});
+
+const dist={15:1,16:0,17:0,18:3,19:6};
+new Chart(document.getElementById('scoreChart'),{type:'bar',data:{labels:['15','16','17','18','19'],datasets:[{label:'จำนวนคน',data:[1,0,0,3,6],backgroundColor:['#BA7517','#D3D1C7','#D3D1C7','#378ADD','#0F6E56'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:(c)=>`${c.raw} คน`}}},scales:{x:{grid:{display:false},title:{display:true,text:'คะแนน',font:{size:11}}},y:{beginAtZero:true,max:8,ticks:{stepSize:1},grid:{color:'rgba(128,128,128,0.1)'}}}}});
+</script>
